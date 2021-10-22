@@ -1,0 +1,67 @@
+{% comment %}
+    Renders a specific icon for a given name.
+
+    Accepts:
+    - icon: {string} Icon name (required)
+    - icon_size: {integer} Icon size (required)
+    - icon_class: {string} Icon class (optional)
+
+    Usage:
+    {%- render 'component-icon'
+      icon: 'cart',
+      icon_size: 40,
+      icon_class: 'icon-class'
+    -%}
+{% endcomment %}
+
+{%- capture icon_class -%}{{ icon }} {{ icon_class }}{%- endcapture -%}
+
+{%- case icon -%}
+  {%- when 'cart' -%}
+    <svg xmlns="http://www.w3.org/2000/svg" class="{{- icon_class -}}" width="{{- icon_size -}}" height="{{- icon_size -}}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+    </svg>
+
+    {%- when 'bag' -%}
+      <svg xmlns="http://www.w3.org/2000/svg" class="{{- icon_class -}}" width="{{- icon_size -}}" height="{{- icon_size -}}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+      </svg>
+
+    {%- when 'delivery' -%}
+      <svg xmlns="http://www.w3.org/2000/svg" class="{{- icon_class -}}" width="{{- icon_size -}}" height="{{- icon_size -}}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" />
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h1m8-1a1 1 0 01-1 1H9m4-1V8a1 1 0 011-1h2.586a1 1 0 01.707.293l3.414 3.414a1 1 0 01.293.707V16a1 1 0 01-1 1h-1m-6-1a1 1 0 001 1h1M5 17a2 2 0 104 0m-4 0a2 2 0 114 0m6 0a2 2 0 104 0m-4 0a2 2 0 114 0" />
+      </svg>
+
+    {%- when 'mail' -%}
+      <svg xmlns="http://www.w3.org/2000/svg" class="{{- icon_class -}}" width="{{- icon_size -}}" height="{{- icon_size -}}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+      </svg>
+
+      {%- when 'fire' -%}
+        <svg xmlns="http://www.w3.org/2000/svg" class="{{- icon_class -}}" width="{{- icon_size -}}" height="{{- icon_size -}}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 18.657A8 8 0 016.343 7.343S7 9 9 10c0-2 .5-5 2.986-7C14 5 16.09 5.777 17.656 7.343A7.975 7.975 0 0120 13a7.975 7.975 0 01-2.343 5.657z" />
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.879 16.121A3 3 0 1012.015 11L11 14H9c0 .768.293 1.536.879 2.121z" />
+        </svg>
+
+      {% when 'chev-down' %}
+      <svg xmlns="http://www.w3.org/2000/svg" class="{{- icon_class -}}" width="{{- icon_size -}}" height="{{- icon_size -}}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+
+    {%- when 'chev-up' -%}
+      <svg xmlns="http://www.w3.org/2000/svg" class="{{- icon_class -}}" width="{{- icon_size -}}" height="{{- icon_size -}}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+    
+    {%- when 'chev-right' -%}
+      <svg xmlns="http://www.w3.org/2000/svg" class="{{- icon_class -}}" width="{{- icon_size -}}" height="{{- icon_size -}}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+      </svg>
+
+    {%- when 'chev-left' -%}
+      <svg xmlns="http://www.w3.org/2000/svg" class="{{- icon_class -}}" width="{{- icon_size -}}" height="{{- icon_size -}}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+      </svg>
+
+{%- endcase -%}

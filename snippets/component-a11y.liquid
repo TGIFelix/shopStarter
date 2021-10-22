@@ -1,0 +1,14 @@
+{% comment %}
+  Renders a hidden skip to content bar for accessibilty.
+
+  Usage example:
+  {%- render 'component-a11y' -%}
+{% endcomment %}
+
+<div class="sr-only" tabindex="-1">
+	<a role="button" class="" href="#MainContent">
+	  {{- "accessibility.skip_to_content" | t -}}
+	</a>
+	<button type="button" class="p-12 ring-2 ring-black" onclick="this.blur();">{{- "accessibility.close" | t -}}</button>
+</div>
+  

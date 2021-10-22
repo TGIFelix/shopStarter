@@ -1,0 +1,39 @@
+/// === BASE === ///
+@tailwind base;
+@layer base {
+	body { @apply antialiased; }
+}
+
+/// === COMPONENTS === ///
+@tailwind components;
+@layer components {
+	.styled-links a { @apply underline hover:no-underline; }
+	.styled-list ul { @apply list-disc ml-5; }
+	.styled-list ol { @apply list-decimal ml-5; }
+
+	.btn-1 a {
+		@apply bg-black text-white; 
+		@apply px-8 py-4 rounded-lg; 
+		@apply opacity-80 hover:opacity-100;
+	}
+
+	@responsive {}
+}
+
+/// === UTILITIES === ///
+@tailwind utilities;
+@layer utilities {
+	.bg-cover { @apply bg-cover bg-center bg-no-repeat; }
+	.img-cover img { @apply w-full h-full object-cover; }
+	.img-contain img { @apply w-full h-full object-contain; }
+
+	.flex-center { @apply flex justify-center items-center; }
+	.flow { @apply flex-row flex-wrap; }
+
+	.fluid { @apply container px-0 mx-0 max-w-none; }
+}
+
+/// ===================================///
+/// ========= CUSTOM STYLING ========= ///
+/// ===================================///
+

@@ -1,0 +1,32 @@
+<!doctype html>
+<html class="is-loading" lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+
+		<link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
+		<link rel="preconnect" href="https://fonts.shopifycdn.com" crossorigin>
+
+		{%- liquid
+			render 'head-seo'
+			render 'head-metas'
+			render 'head-settings'
+			render 'head-assets'
+		-%}
+
+		{{ content_for_header }}
+	</head>
+	<body>
+		{%- render 'component-a11y' -%}
+
+		{%- section 'header' -%}
+
+		<main id="MainContent" role="main" class="theme theme-{{ template.name | handle }}" tabindex="-1">
+			{{ content_for_layout }}
+		</main>
+
+		{%- section 'footer' -%}
+
+	</body>
+</html>
