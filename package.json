@@ -1,11 +1,11 @@
 {
 	"name": "shopstarter",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "",
 	"main": "index.js",
 	"keywords": [],
-	"author": "",
-	"license": "ISC",
+	"author": "Felix Swinkels",
+	"license": "Unlicense",
 	"scripts": {
 		"watch": "webpack --mode development -w",
 		"build": "webpack --mode production",
@@ -13,6 +13,7 @@
 		"dev": "run-p watch serve"
 	},
 	"dependencies": {
+		"fslightbox": "^3.3.0-2",
 		"swiper": "^7.0.5",
 		"tailwindcss": "^2.2.15"
 	},
