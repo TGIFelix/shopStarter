@@ -15,7 +15,8 @@
 	"dependencies": {
 		"fslightbox": "^3.3.0-2",
 		"swiper": "^7.0.5",
-		"tailwindcss": "^2.2.15"
+		"tailwindcss": "^2.2.15",
+		"vue": "^3.2.20"
 	},
 	"devDependencies": {
 		"autoprefixer": "^10.3.4",

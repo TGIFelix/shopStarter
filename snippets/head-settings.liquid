@@ -1,4 +1,4 @@
-{% comment %}
+'/{% comment %}
   Passes global shopify settings to CSS custom properties and
   Theme global object. Use good old ES5 in this file!
 
@@ -23,7 +23,7 @@
   <link rel="preload" href="{{ theme_font_body | font_url }}" type="font/woff2" as="font" crossorigin>
 {%- endunless -%}
 
-<style>
+<style> 
   :root {
     --theme-color-primary:      {{ settings.theme_color_primary }};
     --theme-color-secondary:    {{ settings.theme_color_secondary }};

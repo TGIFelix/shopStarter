@@ -1,6 +1,6 @@
 <section id="welcome" class="w-screen h-screen" style="background: url('https://source.unsplash.com/random?shop') center / cover no-repeat;">
   <div class="container flex justify-center pt-24 space-x-2 sm:pt-8 sm:justify-end">
-    <a href="{{ routes.root_url }}" class="px-4 py-2 font-mono text-black bg-white rounded-lg flex-center xs:text-2xl opacity-80 hover:opacity-100">
+    <a v-on:click="alert('test')" href="{{ routes.root_url }}" class="px-4 py-2 font-mono text-black bg-white rounded-lg flex-center xs:text-2xl opacity-80 hover:opacity-100">
       {%- render 'component-icon'
         icon: 'cart',
         icon_size: 24,

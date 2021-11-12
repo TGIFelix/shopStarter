@@ -23,7 +23,6 @@
 /// === UTILITIES === ///
 @tailwind utilities;
 @layer utilities {
-	.bg-cover { @apply bg-cover bg-center bg-no-repeat; }
 	.img-cover img { @apply w-full h-full object-cover; }
 	.img-contain img { @apply w-full h-full object-contain; }
 

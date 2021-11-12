@@ -1,7 +1,7 @@
 /*!*****************************************************************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/tailwind.css ***!
   \*****************************************************************************************************************************************************/
-/*! tailwindcss v2.2.15 | MIT License | https://tailwindcss.com *//*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
+/*! tailwindcss v2.2.19 | MIT License | https://tailwindcss.com *//*! modern-normalize v1.1.0 | MIT License | https://github.com/sindresorhus/modern-normalize */
 
 /*
 Document
@@ -796,7 +796,7 @@ video {
   !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/postcss-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./node_modules/swiper/swiper-bundle.min.css ***!
   \******************************************************************************************************************************************************************************/
 /**
- * Swiper 7.0.5
+ * Swiper 7.2.0
  * Most modern mobile touch slider and framework with hardware accelerated transitions
  * https://swiperjs.com
  *
@@ -804,7 +804,7 @@ video {
  *
  * Released under the MIT License
  *
- * Released on: September 9, 2021
+ * Released on: October 27, 2021
  */
 @font-face {
   font-family: swiper-icons;
