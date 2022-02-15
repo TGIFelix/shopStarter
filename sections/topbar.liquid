@@ -1,0 +1,56 @@
+<section id="theme-{{ section.id }}" class="w-screen font-sans text-sm text-white uppercase bg-primary">
+  <div class="container flex items-center justify-center py-4 md:justify-between">
+    <div id="annoucements">
+      <ul class="flex space-x-4 whitespace-nowrap">
+        {% for block in section.blocks %}
+          <li class="items-center justify-center hidden first:flex md:flex">
+            {%- render 'component-icon'
+              icon: 'check',
+              icon_size: 20,
+              icon_class: 'mr-1'
+            -%}
+            {{ block.settings.usp }}
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+    <div class="items-center hidden lg:flex">
+      <div id="topnav">
+        <ul class="flex items-center space-x-4">
+          {%- for link in linklists.top-menu.links -%}
+            <li>
+              <a
+                href="{{ link.url }}"
+                {% if link.active %}aria-current="page"{% endif %}
+                class="block"
+              >
+                {{ link.title }}
+              </a>
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+      <div id="language" class="font-bold"></div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Top bar",
+  "max_blocks": 3,
+  "blocks": [
+    {
+      "name": "USP",
+      "type": "range",
+      "settings": [
+        {
+          "type": "text",
+          "id": "usp",
+          "label": "USP"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

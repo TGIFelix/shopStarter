@@ -1,17 +1,9 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-	mode: 'jit',
-	purge: {
-		enabled: false,
-		content: [
-			'./layout/*.liquid',
-			'./templates/*.liquid',
-			'./sections/*.liquid',
-			'./snippets/*.liquid',
-		],
-	},
-	darkMode: 'media',
+	content: [
+		'./**/*.liquid'
+	],
 
 	theme: {
 		screens: {
@@ -25,9 +17,7 @@ module.exports = {
 
 		extend: {},
 	},
-	variants: {
-		extend: {},
-	},
+
 	plugins: [
 		require('tailwindcss-debug-screens'),
 	]

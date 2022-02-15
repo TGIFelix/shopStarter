@@ -1,7 +1,7 @@
 /// === BASE === ///
 @tailwind base;
 @layer base {
-	body { @apply antialiased; }
+	body { @apply antialiased debug-screens; }
 }
 
 /// === COMPONENTS === ///
@@ -10,14 +10,6 @@
 	.styled-links a { @apply underline hover:no-underline; }
 	.styled-list ul { @apply list-disc ml-5; }
 	.styled-list ol { @apply list-decimal ml-5; }
-
-	.btn-1 a {
-		@apply bg-black text-white; 
-		@apply px-8 py-4 rounded-lg; 
-		@apply opacity-80 hover:opacity-100;
-	}
-
-	@responsive {}
 }
 
 /// === UTILITIES === ///
@@ -35,4 +27,3 @@
 /// ===================================///
 /// ========= CUSTOM STYLING ========= ///
 /// ===================================///
-
