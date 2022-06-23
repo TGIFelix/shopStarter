@@ -1,4 +1,32 @@
-<div data-section-id="{{- section.id -}}"></div>
+<div data-section-id="{{- section.id -}}" class="w-screen bg-red-200 lg:flex">
+  <div class="lg:w-1/2 xl:w-2/5">
+    <img src="//source.unsplash.com/1024x768/?interior" alt="" width="" height="" loading="lazy" class="object-cover w-full h-full max-h-[50vh] lg:max-h-min">
+  </div>
+  <div class="h-full p-20 md:p-32 xl:px-40 lg:w-1/2 xl:w-3/5 xl:py-52">
+    <div class="flex space-x-4 text-sm text-sans">
+      {% for collection in product.collections %}
+        <a href="{{ collection.url }}">
+          <span>#{{ collection.title }}</span>
+        </a>
+      {% endfor %}
+    </div>
+    <h1 class="capitalize xl:text-7xl">{{ product.title }}</h1>
+    <div class="mt-6 max-w-prose">
+      {% if product.description.size > 0 %}
+        {{ product.description }}
+      {% else %}
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non animi, totam suscipit delectus inventore neque sequi minus quos perspiciatis ducimus qui molestias odit ut pariatur optio quam quas culpa veritatis!
+        </p>
+      {% endif %}
+    </div>
+    <button class="mt-12 btn">
+      <span>{{ product.price | money }}</span>
+      <span>•</span>
+      <span>Add to cart</span>
+    </button>
+  </div>
+</div>
 
 
 {% schema %}

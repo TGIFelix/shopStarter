@@ -1,0 +1,36 @@
+<div data-section-id="{{- section.id -}}" class="container pt-20">
+  <div class="flex flex-col gap-8 md:flex-row">
+    <div class="relative w-full bg-cover group bg-unsplash md:w-1/2 lg:w-2/3">
+      <div class="relative z-10 flex flex-col justify-center h-full p-10 text-white">
+        <h1 class="">Conceptstore</h1>
+        <p class="max-w-md mt-4 leading-tight lg:text-lg">Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae et suscipit quasi a, voluptatem ipsum fuga totam ab nostrum. Reiciendis delectus incidunt at alias iste facilis asperiores dolorum unde pariatur!</p>
+        <button class="mt-4 btn">Shop now</button>
+      </div>
+      <div class="absolute top-0 bottom-0 left-0 right-0 transition-all duration-1000 bg-dark opacity-40 group-hover:opacity-90"></div>
+    </div>
+
+    <div class="w-full rounded-r-full lg:rounded-t-full md:w-1/2 lg:w-1/3 bg-primary">
+      <div class="px-10 py-16 lg:pt-40 lg:pb-20 text-dark md:px-12 lg:px-16">
+        <h2 class="">SALE</h2>
+        <p class="mt-4">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <button class="mt-8 btn__alt">Get lucky</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Hero",
+  "tag": "section",
+  "settings": [
+
+  ],
+  "presets": [
+    {
+      "category": "Hero",
+      "name": "Hero"
+    }
+  ]
+}
+{% endschema %}

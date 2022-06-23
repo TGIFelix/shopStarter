@@ -24,7 +24,6 @@ const config = {
           {
             loader: 'postcss-loader'
           },
-          'sass-loader',
         ],
       },
     ],

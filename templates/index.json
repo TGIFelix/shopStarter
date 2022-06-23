@@ -1,10 +1,67 @@
 {
   "sections": {
+    "16559084921d1e2168": {
+      "type": "main-hero",
+      "settings": {
+      }
+    },
+    "1655908495173e1d0f": {
+      "type": "home-collection",
+      "settings": {
+        "featured_collection": "sale"
+      }
+    },
+    "165590849837ffe078": {
+      "type": "main-seo",
+      "settings": {
+        "title": "Need inspiration? Follow our social channels!",
+        "description": "",
+        "show_social_buttons": true,
+        "button_text": "",
+        "button_link": ""
+      }
+    },
+    "165590850143a2b122": {
+      "type": "home-collection",
+      "settings": {
+        "featured_collection": "new"
+      }
+    },
+    "16559085033a2ce9da": {
+      "type": "main-text-image",
+      "settings": {
+      }
+    },
+    "1655910456ae2b9e49": {
+      "type": "main-seo",
+      "settings": {
+        "title": "Next day delivery",
+        "description": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae et suscipit quasi a, voluptatem ipsum fuga totam ab nostrum. Reiciendis delectus incidunt at alias iste facilis asperiores dolorum unde pariatur!<\/p>",
+        "show_social_buttons": false,
+        "button_text": "",
+        "button_link": ""
+      }
+    },
     "main": {
-      "type": "shop-starter"
+      "type": "shop-starter",
+      "disabled": true,
+      "settings": {
+      }
+    },
+    "1655930533d8b9aedc": {
+      "type": "spacer",
+      "settings": {
+      }
     }
   },
   "order": [
-    "main"
+    "16559084921d1e2168",
+    "1655908495173e1d0f",
+    "165590849837ffe078",
+    "165590850143a2b122",
+    "16559085033a2ce9da",
+    "1655910456ae2b9e49",
+    "main",
+    "1655930533d8b9aedc"
   ]
 }

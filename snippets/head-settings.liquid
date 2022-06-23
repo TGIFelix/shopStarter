@@ -1,4 +1,4 @@
-'/{% comment %}
+{% comment %}
   Passes global shopify settings to CSS custom properties and
   Theme global object. Use good old ES5 in this file!
 
@@ -10,18 +10,6 @@
     'src/styles/settings' directory, any modification need
     to also be applied to the other file and vice versa.
 {% endcomment %}
-
-{% comment %} Style/Liquid Settings {% endcomment %}
-{%- assign theme_font_heading = settings.theme_font_heading -%}
-{%- assign theme_font_body    = settings.theme_font_body -%}
-
-
-{%- unless theme_font_heading.system? -%}
-  <link rel="preload" href="{{ theme_font_heading | font_url }}" type="font/woff2" as="font" crossorigin>
-{%- endunless -%}
-{%- unless theme_font_body.system? -%}
-  <link rel="preload" href="{{ theme_font_body | font_url }}" type="font/woff2" as="font" crossorigin>
-{%- endunless -%}
 
 <style> 
   :root {

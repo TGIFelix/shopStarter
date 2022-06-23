@@ -1,0 +1,51 @@
+<div class="container relative section-padding">
+  <div class="flex flex-col px-12 py-6">
+    <div class="max-w-max bg-primary px-4 py-0.5 font-serif text-3xl font-bold uppercase text-dark">
+      {{ section.settings.featured_collection }}
+    </div>
+    <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 featured_collection">
+      {% for product in section.settings.featured_collection.products limit: 6 %}
+        <a href="{{ product.url }}" class="col-span-1 text-dark featured_collection-item">
+          <div class="relative w-full mt-4 bg-center bg-cover bg-unsplash aspect-video">
+              <div class="absolute top-4 right-4">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-dark hover:fill-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                  </svg>
+              </div>
+          </div>
+          <div class="mt-4">
+            <div class="text-lg">{{ product.title }}</div>
+            <div class="flex flex-col items-start mt-1 space-y-2">
+              <div class="font-sans">
+                <div class="text-sm">{{ product.price | money_with_currency }}</div>
+                <div class="text-sm">{{ product.price_old | money_with_currency }}</div>
+              </div>
+              <button class="btn__buy">+ Add to cart</button>
+            </div>
+          </div>
+        </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Home featured collection",
+  "tag": "section",
+ "settings": [
+  {
+    "type": "collection",
+    "id": "featured_collection",
+    "label": "Collection"
+
+  }
+ ],
+  "presets": [
+    {
+      "category": "collection",
+      "name": "Home featured collection"
+    }
+  ]
+}
+{% endschema %}

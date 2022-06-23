@@ -1,29 +1,35 @@
-/// === BASE === ///
 @tailwind base;
 @layer base {
-	body { @apply antialiased debug-screens; }
+  body { @apply text-dark bg-light font-serif; }
+  h1, h2, h3, h4 { @apply font-serif font-bold; } 
+  h1 { @apply text-4xl lg:text-6xl; }
+  h2 { @apply text-3xl lg:text-5xl; }
+  h3 { @apply text-xl lg:text-2xl; }
 }
-
-/// === COMPONENTS === ///
 @tailwind components;
 @layer components {
-	.styled-links a { @apply underline hover:no-underline; }
-	.styled-list ul { @apply list-disc ml-5; }
-	.styled-list ol { @apply list-decimal ml-5; }
-}
+  .btn {
+    @apply max-w-max rounded-full bg-white py-2 px-10 whitespace-nowrap;
+    @apply font-semibold uppercase text-dark ring-1 ring-dark;
+    @apply transition-all duration-300;
+    @apply lg:hover:bg-dark lg:hover:text-white;
+  }
 
-/// === UTILITIES === ///
+  .btn__alt {
+    @apply btn bg-dark text-white;
+    @apply lg:hover:bg-white lg:hover:text-dark;
+  }
+
+  .btn__buy {
+    @apply py-1 font-semibold text-dark font-serif text-sm;
+    /* @apply px-2 rounded-full ring-1 ring-dark; */
+  }
+}
 @tailwind utilities;
 @layer utilities {
-	.img-cover img { @apply w-full h-full object-cover; }
-	.img-contain img { @apply w-full h-full object-contain; }
-
-	.flex-center { @apply flex justify-center items-center; }
-	.flow { @apply flex-row flex-wrap; }
-
-	.fluid { @apply container px-0 mx-0 max-w-none; }
+	.section-padding {
+		@apply pt-8 md:pt-12 lg:pt-16;
+	}
 }
 
-/// ===================================///
-/// ========= CUSTOM STYLING ========= ///
-/// ===================================///
+.ig__post:nth-child(n+4) { @apply hidden lg:block; }
