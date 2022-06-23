@@ -30,6 +30,15 @@
 	.section-padding {
 		@apply pt-8 md:pt-12 lg:pt-16;
 	}
+
+  .flex-center { @apply flex justify-center items-center; }
 }
 
+/* ---SCROLLING */
+html.scrolling .fixed__nav { @apply shadow; }
+html.scrolling .fixed__nav-wrapper { @apply py-1 duration-300 !important; }
+html.scrolling .nav__topbar { @apply opacity-0 duration-300; }
+html.scrolling .nav__brand { @apply scale-75 duration-300; }
+
+/* ---FOOTER */
 .ig__post:nth-child(n+4) { @apply hidden lg:block; }

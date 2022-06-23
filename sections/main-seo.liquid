@@ -1,5 +1,5 @@
 <div data-section-id="{{- section.id -}}" class="container section-padding">
-  <div class="bg-primary">
+  <div class="bg-primary seo__section-{{- section.id -}}">
     <div class="flex flex-col items-center justify-center h-full p-10">
         {% if section.settings.title %}
           <h2 class="max-w-lg leading-snug text-center">{{ section.settings.title }}</h2>
@@ -35,6 +35,37 @@
 </div>
 </div>
 
+{% style %}
+  {% case section.settings.rounded_corners %}
+    {% when 'rounded-top' %}
+      .seo__section-{{- section.id -}} {
+        border-top-right-radius: 9999px;
+        border-top-left-radius: 9999px;
+        padding-top: 120px;
+        max-width: 768px;
+        margin: 0 auto;
+      }
+    {% when 'rounded-right' %}
+      .seo__section-{{- section.id -}} {
+        border-top-right-radius: 9999px;
+        border-bottom-right-radius: 9999px;
+      }
+    {% when 'rounded-bottom' %}
+      .seo__section-{{- section.id -}} {
+        border-bottom-right-radius: 9999px;
+        border-bottom-left-radius: 9999px;
+        padding-bottom: 120px;
+        max-width: 768px;
+        margin: 0 auto;
+      }
+    {% when 'rounded-left' %}
+      .seo__section-{{- section.id -}} {
+        border-top-left-radius: 9999px;
+        border-bottom-left-radius: 9999px;
+      }
+  {% endcase %}
+{% endstyle %}
+
 {% schema %}
 {
   "name": "SEO",
@@ -51,11 +82,6 @@
       "label": "Description"
     },
     {
-     "type": "checkbox",
-      "id": "show_social_buttons",
-      "label": "Show social buttons"
-    },
-    {
       "type": "text",
        "id": "button_text",
        "label": "Button text"
@@ -64,7 +90,39 @@
      "type": "url",
       "id": "button_link",
       "label": "Button link"
-    }
+    },
+    {
+     "type": "select",
+      "id": "rounded_corners",
+      "label": "Rounded corners",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "rounded-top",
+          "label": "Rounded top"
+        },
+        {
+          "value": "rounded-bottom",
+          "label": "Rounded bottom"
+        },
+        {
+          "value": "rounded-left",
+          "label": "Rounded left"
+        },
+        {
+          "value": "rounded-right",
+          "label": "Rounded right"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+       "id": "show_social_buttons",
+       "label": "Show social buttons"
+     }
   ],
   "presets": [
     {

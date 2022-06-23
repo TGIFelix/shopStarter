@@ -16,9 +16,10 @@
       "settings": {
         "title": "Need inspiration? Follow our social channels!",
         "description": "",
-        "show_social_buttons": true,
         "button_text": "",
-        "button_link": ""
+        "button_link": "",
+        "rounded_corners": "none",
+        "show_social_buttons": true
       }
     },
     "165590850143a2b122": {
@@ -32,20 +33,15 @@
       "settings": {
       }
     },
-    "1655910456ae2b9e49": {
+    "16560225102086df66": {
       "type": "main-seo",
       "settings": {
-        "title": "Next day delivery",
+        "title": "Need a gift?",
         "description": "<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae et suscipit quasi a, voluptatem ipsum fuga totam ab nostrum. Reiciendis delectus incidunt at alias iste facilis asperiores dolorum unde pariatur!<\/p>",
-        "show_social_buttons": false,
-        "button_text": "More info",
-        "button_link": ""
-      }
-    },
-    "main": {
-      "type": "shop-starter",
-      "disabled": true,
-      "settings": {
+        "button_text": "Gift cards",
+        "button_link": "",
+        "rounded_corners": "rounded-left",
+        "show_social_buttons": false
       }
     },
     "1655930533d8b9aedc": {
@@ -60,8 +56,7 @@
     "165590849837ffe078",
     "165590850143a2b122",
     "16559085033a2ce9da",
-    "1655910456ae2b9e49",
-    "main",
+    "16560225102086df66",
     "1655930533d8b9aedc"
   ]
 }

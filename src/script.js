@@ -6,21 +6,31 @@ import './main.scss';
 import vue from 'vue';
 
 // SWIPERJS
- import Swiper from 'swiper/bundle';
- import 'swiper/css/bundle';
+import Swiper from 'swiper/bundle';
+import 'swiper/css/bundle';
 
- const swiper = new Swiper('.product__img-swiper', {
-    loop: true,
-    slidesPerView: 1,
-  
-    // If we need pagination
-    // pagination: {
-    //   el: '.swiper-pagination',
-    // },
-  
-    navigation: {
-      nextEl: '.button-next',
-      prevEl: '.button-prev',
-    },
-  
-  });
+const swiper = new Swiper('.product__img-swiper', {
+  loop: true,
+  slidesPerView: 1,
+  pagination: {
+    el: ".swiper-pagination",
+    dynamicBullets: true,
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.button-next',
+    prevEl: '.button-prev',
+  },
+  keyboard: {
+    enabled: true,
+    onlyInViewport: true,
+  }
+});
+
+window.addEventListener('scroll', () => {
+	if (window.scrollY > 32) {
+		document.querySelector('html').classList.add('scrolling');
+	} else {
+		document.querySelector('html').classList.remove('scrolling');
+	}
+});

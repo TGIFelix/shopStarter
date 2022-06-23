@@ -1,0 +1,97 @@
+<div
+  class="container product-recommendations section-padding"
+  data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit=4"
+>
+  {%- if recommendations.performed and recommendations.products_count > 0 -%}
+    <h2>You may also like</h2>
+
+    <ul class="grid grid-cols-3 gap-4 mt-12 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6">
+      {%- for product in recommendations.products limit: 6 -%}
+        <li class="col-span-1 product">
+          <a href="{{ product.url }}">
+            <!-- <img
+              class="product__img"
+              src="{{ product.featured_image | image_url: width: 300, height: 300 }}"
+              alt="{{ product.featured_image.alt }}"
+              width="300"
+              height="300"
+              loading="lazy"
+            /> -->
+            <img
+              class="product__img"
+              src="//source.unsplash.com/300x300/?interior"
+              alt="{{ product.featured_image.alt }}"
+              width="300"
+              height="300"
+              loading="lazy"
+              class="object-cover w-full h-full"
+            />
+
+            <p class="product__title">{{ product.title }}</p>
+            <p class="product__price">{{ product.price | money}}</p>
+          </a>
+        </li>
+      {%- endfor -%}
+    </ul>
+  {%- endif -%}
+</div>
+
+{% style %}
+  .product:nth-child(n+4) {
+    display: none;
+  }
+  @media (min-width: 768px) {
+    .product:nth-child(n+5) {
+      display: none;
+    }
+  }
+  @media (min-width: 1024px) {
+    .product:nth-child(n+6) {
+      display: none;
+    }
+  }
+{% endstyle %}
+
+{% javascript %}
+  const handleIntersection = (entries, observer) => {
+    if (!entries[0].isIntersecting) return;
+
+    observer.unobserve(productRecommendationsSection);
+
+    const url = productRecommendationsSection.dataset.url;
+
+    fetch(url)
+      .then(response => response.text())
+      .then(text => {
+        const html = document.createElement('div');
+        html.innerHTML = text;
+        const recommendations = html.querySelector('.product-recommendations');
+
+        if (recommendations && recommendations.innerHTML.trim().length) {
+          productRecommendationsSection.innerHTML = recommendations.innerHTML;
+        }
+      })
+      .catch(e => {
+        console.error(e);
+      });
+  };
+
+  const productRecommendationsSection = document.querySelector('.product-recommendations');
+  const observer = new IntersectionObserver(handleIntersection, {rootMargin: '0px 0px 200px 0px'});
+
+  observer.observe(productRecommendationsSection);
+{% endjavascript %}
+
+
+{% schema %}
+{
+  "name": "Product recommendations",
+  "tag": "section",
+  "presets": [
+    {
+      "category": "recommendation",
+      "name": "Product recommendations"
+    }
+  ]
+}
+{% endschema %}

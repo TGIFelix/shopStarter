@@ -5,15 +5,26 @@
       "settings": {
       }
     },
-    "1655930597c78d35dd": {
-      "type": "home-collection",
+    "165601866875dad592": {
+      "type": "product-recommendations",
       "settings": {
-        "featured_collection": "new"
+      }
+    },
+    "16560186883dec11d2": {
+      "type": "main-seo",
+      "settings": {
+        "title": "Free shipping",
+        "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non animi, totam suscipit delectus inventore neque.<\/p>",
+        "show_social_buttons": false,
+        "button_text": "more info",
+        "button_link": "",
+        "rounded_corners": "rounded-right"
       }
     }
   },
   "order": [
     "main",
-    "1655930597c78d35dd"
+    "165601866875dad592",
+    "16560186883dec11d2"
   ]
 }

@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="is-loading" lang="fr">
+<html class="loading" lang="en">
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -28,5 +28,10 @@
 
 		{%- section 'footer' -%}
 
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        document.querySelector('html').classList.replace('loading','page-ready');
+      });
+    </script>
 	</body>
 </html>
