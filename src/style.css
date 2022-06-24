@@ -59,6 +59,6 @@ html.scrolling .nav__brand { @apply scale-75 duration-300; }
 .ig__post:nth-child(n+4) { @apply hidden lg:block; }
 
 /* ---MAIN PRODUCT */
-.main__product.expand { @apply flex-col; }
-.main__product.expand .product__img-swiper { @apply w-full h-[85vh] pt-8 !important; }
-.main__product.expand .main__product-description { @apply w-full; }
+.main__product.expanded { @apply flex-col; }
+.main__product.expanded .product__img-swiper { @apply w-full lg:h-[85vh] lg:pt-8 !important; }
+.main__product.expanded .main__product-description { @apply w-full; }

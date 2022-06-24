@@ -23,7 +23,6 @@ module.exports = {
 		  },
 		  backgroundImage: {
 			'unsplash': 'url("//source.unsplash.com/1024x768/?interiors")',
-			'splatter': 'url("/assets/bg.png")',
 		  },
 		  fontFamily: {
 			'serif': 'Fraunces',

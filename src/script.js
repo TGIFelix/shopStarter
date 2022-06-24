@@ -72,17 +72,17 @@ if (document.querySelector('.img__expand')) {
     mainProduct = document.querySelector('.main__product');
 
   imgExp.addEventListener('click', () => {
-    mainProduct.classList.toggle('expand');
-    imgExp.innerHTML = mainProduct.classList.contains('expand') ? imgClose : imgOpen;
+    mainProduct.classList.toggle('expanded');
+    imgExp.innerHTML = mainProduct.classList.contains('expanded') ? imgClose : imgOpen;
   });
 
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      mainProduct.classList.remove('expand');
+    if (e.key === 'f') {
+      mainProduct.classList.toggle('expanded');
+      imgExp.innerHTML = mainProduct.classList.contains('expanded') ? imgClose : imgOpen
+    } else if (e.key === 'Escape') {
+      mainProduct.classList.remove('expanded');
       imgExp.innerHTML = imgOpen;
-    } else if (e.key === 'f') {
-      mainProduct.classList.toggle('expand');
-      imgExp.innerHTML = mainProduct.classList.contains('expand') ? imgClose : imgOpen
-    }
+    };
   })
-}
+};

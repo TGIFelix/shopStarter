@@ -900,17 +900,11 @@ h3 {
   --tw-bg-opacity: 1;
   background-color: rgb(148 163 184 / var(--tw-bg-opacity));
 }
-.bg-splatter {
-  background-image: url(b1e39795519c3138747f.png);
-}
 .bg-unsplash {
   background-image: url("//source.unsplash.com/1024x768/?interiors");
 }
 .bg-cover {
   background-size: cover;
-}
-.bg-fixed {
-  background-attachment: fixed;
 }
 .bg-center {
   background-position: center;
@@ -1166,15 +1160,21 @@ html.scrolling .nav__brand {
 }
 
 /* ---MAIN PRODUCT */
-.main__product.expand {
+.main__product.expanded {
   flex-direction: column;
 }
-.main__product.expand .product__img-swiper {
-  height: 85vh !important;
+.main__product.expanded .product__img-swiper {
   width: 100% !important;
-  padding-top: 2rem !important;
 }
-.main__product.expand .main__product-description {
+@media (min-width: 1024px) {
+  .main__product.expanded .product__img-swiper {
+    height: 85vh !important;
+  }
+  .main__product.expanded .product__img-swiper {
+    padding-top: 2rem !important;
+  }
+}
+.main__product.expanded .main__product-description {
   width: 100%;
 }
 .first\:flex:first-child {
