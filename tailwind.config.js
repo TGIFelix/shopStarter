@@ -10,6 +10,10 @@ module.exports = {
 		  center: true,
 		  padding: '1rem'
 		},
+		screens: {
+			'xs': '414px',
+			...defaultTheme.screens,
+		},
 		extend: {
 		  colors: {
 			primary: '#F8E28A',
@@ -18,7 +22,8 @@ module.exports = {
 			light: '#FDF4E9'
 		  },
 		  backgroundImage: {
-			'unsplash': 'url("//source.unsplash.com/1024x768/?interiors")'
+			'unsplash': 'url("//source.unsplash.com/1024x768/?interiors")',
+			'splatter': 'url("/assets/bg.png")',
 		  },
 		  fontFamily: {
 			'serif': 'Fraunces',
