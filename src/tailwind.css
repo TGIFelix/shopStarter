@@ -35,7 +35,7 @@
 }
 
 /* ---SCROLLING */
-html.scrolling .fixed__nav { @apply shadow bg-light; }
+html.scrolling .fixed__nav { @apply shadow; }
 html.scrolling .fixed__nav-wrapper { @apply py-1 duration-300 !important; }
 html.scrolling .nav__topbar { @apply opacity-0 duration-300; }
 html.scrolling .nav__brand { @apply scale-75 duration-300; }
@@ -46,3 +46,7 @@ html.scrolling .nav__brand { @apply scale-75 duration-300; }
 
 /* ---FOOTER */
 .ig__post:nth-child(n+4) { @apply hidden lg:block; }
+
+/* ---MAIN PRODUCT */
+.main__product.open { @apply flex-col; }
+.main__product.open .product__img-swiper { @apply w-full h-[75vh] !important; }

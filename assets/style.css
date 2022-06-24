@@ -691,11 +691,17 @@ Ensure the default browser behavior of the `hidden` attribute.
 .right-0 {
   right: 0px;
 }
+.top-16 {
+  top: 4rem;
+}
 .z-50 {
   z-index: 50;
 }
 .z-10 {
   z-index: 10;
+}
+.z-40 {
+  z-index: 40;
 }
 .col-span-1 {
   grid-column: span 1 / span 1;
@@ -928,8 +934,9 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
-.bg-transparent {
-  background-color: transparent;
+.bg-light {
+  --tw-bg-opacity: 1;
+  background-color: rgb(253 244 233 / var(--tw-bg-opacity));
 }
 .bg-neutral-200 {
   --tw-bg-opacity: 1;
@@ -1094,6 +1101,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
+.text-primary {
+  --tw-text-opacity: 1;
+  color: rgb(248 226 138 / var(--tw-text-opacity));
+}
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
@@ -1104,6 +1115,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 .opacity-40 {
   opacity: 0.4;
+}
+.opacity-0 {
+  opacity: 0;
 }
 .opacity-80 {
   opacity: 0.8;
@@ -1132,6 +1146,9 @@ Ensure the default browser behavior of the `hidden` attribute.
 .duration-1000 {
   transition-duration: 1000ms;
 }
+.duration-200 {
+  transition-duration: 200ms;
+}
 .section-padding {
   padding-top: 2rem;
 }
@@ -1155,8 +1172,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 /* ---SCROLLING */
 html.scrolling .fixed__nav {
-  --tw-bg-opacity: 1;
-  background-color: rgb(253 244 233 / var(--tw-bg-opacity));
   --tw-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color), 0 1px 2px -1px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
@@ -1200,6 +1215,15 @@ html.scrolling .nav__brand {
     display: block;
   }
 }
+
+/* ---MAIN PRODUCT */
+.main__product.open {
+  flex-direction: column;
+}
+.main__product.open .product__img-swiper {
+  height: 75vh !important;
+  width: 100% !important;
+}
 .first\:flex:first-child {
   display: flex;
 }
@@ -1239,6 +1263,9 @@ html.scrolling .nav__brand {
 }
 .group:hover .group-hover\:opacity-90 {
   opacity: 0.9;
+}
+.group:hover .group-hover\:opacity-100 {
+  opacity: 1;
 }
 @media (min-width: 640px) {
 
@@ -1316,6 +1343,10 @@ html.scrolling .nav__brand {
   }
 }
 @media (min-width: 1024px) {
+
+  .lg\:block {
+    display: block;
+  }
 
   .lg\:flex {
     display: flex;

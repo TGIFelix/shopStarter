@@ -42,3 +42,7 @@ document.querySelector('.nav__toggle').addEventListener('click', () => {
 document.querySelector('.nav__close').addEventListener('click', () => {
   document.querySelector('.nav__drawer').classList.remove('open');
 })
+
+document.querySelector('.img__expand').addEventListener('click', () => {
+  document.querySelector('.main__product').classList.toggle('open');
+})
