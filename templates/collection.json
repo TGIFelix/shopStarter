@@ -1,8 +1,19 @@
 {
   "sections": {
     "main": {
-      "type": "main-collection"
+      "type": "main-collection",
+      "settings": {
+      }
+    },
+    "1656100828dafb8b99": {
+      "type": "home-collection",
+      "settings": {
+        "featured_collection": "sale"
+      }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main",
+    "1656100828dafb8b99"
+  ]
 }

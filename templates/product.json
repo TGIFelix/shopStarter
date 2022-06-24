@@ -15,10 +15,10 @@
       "settings": {
         "title": "Free shipping",
         "description": "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Non animi, totam suscipit delectus inventore neque.<\/p>",
-        "show_social_buttons": false,
         "button_text": "more info",
         "button_link": "",
-        "rounded_corners": "rounded-right"
+        "rounded_corners": "rounded-right",
+        "show_social_buttons": false
       }
     }
   },

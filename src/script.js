@@ -1,12 +1,6 @@
-// IMPORT STYLES
-import './tailwind.css';
-import './main.scss';
-
-// VUEJS
-import vue from 'vue';
-
-// SWIPERJS
+// IMPORT
 import Swiper from 'swiper/bundle';
+import './style.css';
 import 'swiper/css/bundle';
 
 const swiper = new Swiper('.product__img-swiper', {
@@ -27,6 +21,7 @@ const swiper = new Swiper('.product__img-swiper', {
   }
 });
 
+// ---ADD CLASS ON SCROLL
 window.addEventListener('scroll', () => {
 	if (window.scrollY > 32) {
 		document.querySelector('html').classList.add('scrolling');
@@ -35,14 +30,55 @@ window.addEventListener('scroll', () => {
 	}
 });
 
-document.querySelector('.nav__toggle').addEventListener('click', () => {
-  document.querySelector('.nav__drawer').classList.add('open');
+// ---NAVIGATION
+const navDrawer = document.querySelector('.nav__drawer');
+const navOpen = document.querySelector('.nav__open');
+const navClose = document.querySelector('.nav__close');
+
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'm') {
+    navDrawer.classList.toggle('open');
+  }
 })
 
-document.querySelector('.nav__close').addEventListener('click', () => {
-  document.querySelector('.nav__drawer').classList.remove('open');
+
+navOpen.addEventListener('click', () => {
+  navDrawer.classList.add('open');
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      navDrawer.classList.remove('open');
+    }
+  })
 })
 
-document.querySelector('.img__expand').addEventListener('click', () => {
-  document.querySelector('.main__product').classList.toggle('open');
-})
+navClose.addEventListener('click', () => { navDrawer.classList.remove('open'); })
+
+
+// ---PRODUCT IMAGE EXPAND
+const imgOpen = `
+  <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white drop-shadow-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <path stroke-linecap="round" stroke-linejoin="round" d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
+  </svg>
+`,
+  imgClose = `
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white drop-shadow-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  `;
+
+if (document.querySelector('.img__expand')) {
+  const imgExp = document.querySelector('.img__expand')
+  imgExp.addEventListener('click', () => {
+    document.querySelector('.main__product').classList.toggle('expand');
+    imgExp.innerHTML = document.querySelector('.main__product').classList.contains('expand') ? imgClose : imgOpen;
+  })
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      document.querySelector('.main__product').classList.remove('expand');
+      document.querySelector('.img__expand').innerHTML = imgOpen;
+    } else if (event.key === 'f') {
+      document.querySelector('.main__product').classList.toggle('expand');
+      imgExp.innerHTML = document.querySelector('.main__product').classList.contains('expand') ? imgClose : imgOpen
+    }
+  })
+}

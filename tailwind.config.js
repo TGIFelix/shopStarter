@@ -2,7 +2,8 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
 	content: [
-		'./**/*.liquid'
+		'./**/*.liquid',
+		'./src/*.js',
 	],
 	theme: {
 		container: {
