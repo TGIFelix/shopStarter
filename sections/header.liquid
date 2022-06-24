@@ -1,21 +1,56 @@
-<div data-section-id="{{- section.id -}}">
+<div data-section-id="{{- section.id -}}" class="">
   <nav class="relative">
-    <div class="fixed z-50 w-screen font-serif bg-light fixed__nav">
+    <div class="fixed z-50 w-screen font-serif bg-transparent fixed__nav">
       <div class="container flex items-center justify-between py-4 fixed__nav-wrapper">
         <div class="flex items-center space-x-12">
           <a href="/" class="w-16 h-16 rounded-full bg-primary nav__brand"></a>
           <ul class="items-center justify-center hidden space-x-12 text-lg xl:text-xl md:flex">
-            <li class="text-red-400">Sale</li>
-            <li>New</li>
-            <li class="flex items-center space-x-1">
-              <span>All products</span>
-            </li>
-            <li>Story</li>
+            {%- for link in linklists.main-menu.links -%}
+              <li>
+                <a href="{{ link.url }}" {% if link.active %}aria-current="page"{% endif %}>
+                  {% if link.title == 'Sale' %}
+                    <span class="text-red-400">
+                      {{ link.title }}
+                    </span>
+                  {% else %}
+                    <span>
+                      {{ link.title }}
+                    </span>
+                  {% endif %}
+                </a>
+        
+                {%- if link.links != blank -%}
+                  <ul>
+                    {%- for child_link in link.links -%}
+                      <li>
+                        <a href="{{ child_link.url }}" {% if child_link.active %}aria-current="page"{% endif %}>
+                          {{ child_link.title }}
+                        </a>
+        
+                        {%- if child_link.links != blank -%}
+                          <ul>
+                            {%- for grandchild_link in child_link.links -%}
+                              <li>
+                                <a href="{{ grandchild_link.url }}" {% if grandchild_link.active %}aria-current="page"{% endif %}>
+                                  {{ grandchild_link.title }}
+                                </a>
+                              </li>
+                            {%- endfor -%}
+                          </ul>
+                        {%- endif -%}
+        
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                {%- endif -%}
+        
+              </li>
+            {%- endfor -%}
           </ul>
         </div>
   
         <div class="flex items-center space-x-4">
-          <div class="">
+          <div class="hidden md:block">
             <!-- <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg> -->
@@ -26,6 +61,12 @@
               <path stroke-linecap="round" stroke-linejoin="round" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
             </svg> -->
             <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" viewBox="0 0 32 32"><path d="M29 17a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1h-2v-.79a2.19 2.19 0 0 0-1.09-1.89A6.5 6.5 0 0 0 20 4V3a1 1 0 0 0-2 0v1a6.29 6.29 0 0 0-2.47.72 1 1 0 0 0 .94 1.76A4.51 4.51 0 0 1 18.58 6h.84a4.51 4.51 0 0 1 4.48 4h-9.8a4.37 4.37 0 0 1 .47-1.54 1 1 0 0 0-.44-1.35 1 1 0 0 0-1.34.43 6.53 6.53 0 0 0-.7 2.78A2.19 2.19 0 0 0 11 12.21V13H8.72L7 7.68A1 1 0 0 0 6 7H3.33a1 1 0 0 0 0 2h2L7 14.16v5.61a2.24 2.24 0 0 0 1 1.86V26a1 1 0 0 0 1 1h1.05a2.73 2.73 0 0 0-.05.5 2.5 2.5 0 0 0 5 0 2.73 2.73 0 0 0 0-.5h7.1a2.73 2.73 0 0 0-.05.5 2.5 2.5 0 0 0 5 0A2.73 2.73 0 0 0 27 27h1a1 1 0 0 0 1-1v-4.37a2.24 2.24 0 0 0 1-1.86 1 1 0 1 0-2 0 .23.23 0 0 1-.23.23h-.89a1 1 0 0 0-.92.6.76.76 0 0 1-.46.44 1.07 1.07 0 0 1-1.1-.54 1 1 0 0 0-.93-.5 1 1 0 0 0-.86.61.81.81 0 0 1-.46.43 1.07 1.07 0 0 1-1.1-.53 1 1 0 0 0-.93-.51 1 1 0 0 0-.86.6.83.83 0 0 1-.46.44 1.09 1.09 0 0 1-1.11-.54 1 1 0 0 0-.93-.5 1 1 0 0 0-.86.61.74.74 0 0 1-.46.43 1.07 1.07 0 0 1-1.1-.53 1 1 0 0 0-.92-.51 1 1 0 0 0-.87.6.79.79 0 0 1-.46.44A1.07 1.07 0 0 1 11 20.5a1 1 0 0 0-.87-.5h-.9a.23.23 0 0 1-.23-.23V15h19v1a1 1 0 0 0 1 1zM13 27.5a.5.5 0 1 1-.5-.5.5.5 0 0 1 .5.5zm12 0a.5.5 0 1 1-.5-.5.5.5 0 0 1 .5.5zM12.62 23a2.67 2.67 0 0 0 .91-.45 3.06 3.06 0 0 0 1.72.55A2.55 2.55 0 0 0 16 23a2.5 2.5 0 0 0 .91-.45 3 3 0 0 0 2.44.45 2.5 2.5 0 0 0 .91-.45 3 3 0 0 0 2.44.45 2.55 2.55 0 0 0 .92-.45A2.94 2.94 0 0 0 26 23a2.42 2.42 0 0 0 1-.51V25H10v-2.63a3 3 0 0 0 2.62.63zM13 13v-.79a.21.21 0 0 1 .21-.21h11.58a.21.21 0 0 1 .21.21V13z" data-name="food cart"/></svg>
+          </div>
+
+          <div class="cursor-pointer md:hidden nav__toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+            </svg>
           </div>
         </div>
       </div>
@@ -40,6 +81,63 @@
       </aside>
     </div>
     <div class="w-full h-24"></div>
+  </nav>
+  <nav class="fixed top-0 left-0 z-50 w-screen min-h-screen nav__drawer bg-primary">
+    <div class="container flex items-center justify-end py-8 cursor-pointer nav__close">
+      <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 " fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </div>
+    <div class="container p-20">
+      <ul class="text-4xl xs:text-5xl sm:text-6xl whitespace-nowrap">
+        {%- for link in linklists.main-menu.links -%}
+          <li class="hover:-translate-y-1.5 duration-300">
+            <a href="{{ link.url }}" {% if link.active %}aria-current="page"{% endif %} class="block w-full leading-normal">
+              {% if link.title == 'Sale' %}
+                <span class="text-red-400">
+                  {{ link.title }}
+                </span>
+              {% else %}
+                <span>
+                  {{ link.title }}
+                </span>
+              {% endif %}
+            </a>
+    
+            {%- if link.links != blank -%}
+              <ul class="">
+                {%- for child_link in link.links -%}
+                  <li>
+                    <a href="{{ child_link.url }}" {% if child_link.active %}aria-current="page"{% endif %}>
+                      {{ child_link.title }}
+                    </a>
+    
+                    {%- if child_link.links != blank -%}
+                      <ul>
+                        {%- for grandchild_link in child_link.links -%}
+                          <li>
+                            <a href="{{ grandchild_link.url }}" {% if grandchild_link.active %}aria-current="page"{% endif %}>
+                              {{ grandchild_link.title }}
+                            </a>
+                          </li>
+                        {%- endfor -%}
+                      </ul>
+                    {%- endif -%}
+    
+                  </li>
+                {%- endfor -%}
+              </ul>
+            {%- endif -%}
+    
+          </li>
+        {%- endfor -%}
+      </ul>
+
+      <div class="mt-16">
+        {% render 'component-socials' %}
+      </div>
+
+    </div>
   </nav>
 </div>
 

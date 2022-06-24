@@ -34,3 +34,11 @@ window.addEventListener('scroll', () => {
 		document.querySelector('html').classList.remove('scrolling');
 	}
 });
+
+document.querySelector('.nav__toggle').addEventListener('click', () => {
+  document.querySelector('.nav__drawer').classList.add('open');
+})
+
+document.querySelector('.nav__close').addEventListener('click', () => {
+  document.querySelector('.nav__drawer').classList.remove('open');
+})
