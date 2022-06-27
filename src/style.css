@@ -3,8 +3,9 @@
 /* ---BASE */
 @tailwind base;
 @layer base {
+  html { @apply scroll-smooth; }
   body { @apply text-dark bg-light font-serif; }
-  h1, h2, h3, h4 { @apply font-serif font-bold; } 
+  h1, h2, h3, h4 { @apply font-serif font-bold; }
   h1 { @apply text-4xl lg:text-6xl; }
   h2 { @apply text-3xl lg:text-5xl; }
   h3 { @apply text-xl lg:text-2xl; }
@@ -14,7 +15,7 @@
 @tailwind components;
 @layer components {
   .btn {
-    @apply max-w-max rounded-full bg-white py-2 px-10  ring-1 ring-dark;
+    @apply max-w-max rounded-full bg-white py-2 px-10 ring-1 ring-dark;
     @apply font-semibold uppercase text-sm md:text-base lg:text-lg text-dark whitespace-nowrap;
     @apply transition-all duration-300;
     @apply lg:hover:bg-dark lg:hover:text-white;
@@ -60,5 +61,5 @@ html.scrolling .nav__brand { @apply scale-75 duration-300; }
 
 /* ---MAIN PRODUCT */
 .main__product.expanded { @apply flex-col; }
-.main__product.expanded .product__img-swiper { @apply w-full lg:h-[85vh] lg:pt-8 !important; }
+.main__product.expanded .product__img-swiper { @apply w-full lg:h-[85vh] !important; }
 .main__product.expanded .main__product-description { @apply w-full; }

@@ -24,7 +24,7 @@ const swiper = new Swiper('.product__img-swiper', {
 
 // ---ADD CLASS ON SCROLL
 window.addEventListener('scroll', () => {
-	if (window.scrollY > 32) {
+	if (window.scrollY > 32) { // = usp topbar height
 		document.querySelector('html').classList.add('scrolling');
 	} else {
 		document.querySelector('html').classList.remove('scrolling');
@@ -37,6 +37,7 @@ const navDrawer = document.querySelector('.nav__drawer'),
       navClose = document.querySelector('.nav__close')
 ;
 
+// @production remove:[40-45]
 document.addEventListener('keydown', (e) => {
   if (e.key === 'm') {
     navDrawer.classList.toggle('open');
@@ -61,9 +62,9 @@ const imgOpen = `
   </svg>
 `,
   imgClose = `
-      <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white drop-shadow-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-      </svg>
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-10 h-10 text-white drop-shadow-lg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </svg>
   `
 ;
 
@@ -74,6 +75,7 @@ if (document.querySelector('.img__expand')) {
   imgExp.addEventListener('click', () => {
     mainProduct.classList.toggle('expanded');
     imgExp.innerHTML = mainProduct.classList.contains('expanded') ? imgClose : imgOpen;
+    document.querySelector('.nav__topbar').classList.toggle('opacity-0');
   });
 
   document.addEventListener('keydown', (e) => {
@@ -83,6 +85,6 @@ if (document.querySelector('.img__expand')) {
     } else if (e.key === 'Escape') {
       mainProduct.classList.remove('expanded');
       imgExp.innerHTML = imgOpen;
-    };
+    }
   })
-};
+}

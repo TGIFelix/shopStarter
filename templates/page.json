@@ -1,8 +1,18 @@
 {
   "sections": {
     "main": {
-      "type": "main-page"
+      "type": "main-page",
+      "settings": {
+      }
+    },
+    "1656117029c2d08309": {
+      "type": "super-grid",
+      "settings": {
+      }
     }
   },
-  "order": ["main"]
+  "order": [
+    "main",
+    "1656117029c2d08309"
+  ]
 }

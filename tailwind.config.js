@@ -22,7 +22,7 @@ module.exports = {
 			light: '#FDF4E9'
 		  },
 		  backgroundImage: {
-			'unsplash': 'url("//source.unsplash.com/1024x768/?interiors")',
+			'unsplash': 'url("//source.unsplash.com/800x600/?interior")',
 		  },
 		  fontFamily: {
 			'serif': 'Fraunces',
