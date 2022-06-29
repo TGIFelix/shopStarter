@@ -24,7 +24,7 @@ const swiper = new Swiper('.product__img-swiper', {
 
 // ---ADD CLASS ON SCROLL
 window.addEventListener('scroll', () => {
-	if (window.scrollY > 32) { // = usp topbar height
+	if (window.scrollY > 32) { // = usp top-bar height
 		document.querySelector('html').classList.add('scrolling');
 	} else {
 		document.querySelector('html').classList.remove('scrolling');
